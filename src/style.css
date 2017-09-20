@@ -1,0 +1,51 @@
+@import 'animation.css';
+
+
+html,body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: whitesmoke;
+}
+
+
+.photo-grid {
+    display:flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-figure {
+    flex-basis: calc(33.333% - 4rem);
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin: 0 2rem 2rem 2rem;
+    padding: 2rem;
+    border: 1px solid lightgray;
+    background: white;
+    box-shadow: 0 0 0 5px rgba(0,0,0,0.03);
+    position: relative;
+}
+
+.single-photo {
+
+}
+
+.single-photo.grid-figure{
+    box-shadow:none;
+    margin: 0 2rem 0 0;
+}
+
+
+
+.active{
+    color: red;
+}
+
+
+
+
+
+
+
