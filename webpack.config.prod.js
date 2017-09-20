@@ -30,6 +30,11 @@ module.exports = {
                 test: /\.jsx$/, loader: 'babel-loader',
                 include: path.resolve(__dirname, 'src'),
                 exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                include: path.join(__dirname, 'src'),
+                loader: 'style-loader!css-loader'
             }
         ]
     }
