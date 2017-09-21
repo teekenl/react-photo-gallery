@@ -2,22 +2,13 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: {
-        home: "./src/home.js",
-        dashboard: "./src/dashboard.js"
-    },
+    entry: "./src/home.js",
     output: {
-        filename: "[name].bundle.js",
+        filename: "bundle.js",
         path: path.join(__dirname,'dist'),
         publicPath: '/dist/'
     },
     plugins:[
-        new webpack.optimize.UglifyJsPlugin({
-            minimize: true,
-            compress: {
-                warnings: false
-            }
-        }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
     ],
@@ -26,7 +17,10 @@ module.exports = {
             {
                 test: /\.js$/, loader: 'babel-loader',
                 include: path.resolve(__dirname, 'src'),
-                exclude: /node_modules/
+                exclude: /node_modules/,
+                query: {
+                    presets:['react','es2015','react-hmre']
+                }
             },
             {
                 test: /\.jsx$/, loader: 'babel-loader',
