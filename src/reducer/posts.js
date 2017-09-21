@@ -1,7 +1,6 @@
 function posts(state=[],action) {
     switch(action.type){
       case 'INCREMENT_LIKES':
-          // you can update json here
           const i = action.index;
           console.log(action.type);
          return[

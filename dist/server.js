@@ -1,7 +1,8 @@
 const app = require('./app').app();
 const port = (process.env.PORT || 3000);
 
-
+// Using middle and hotware to reload the react , jsx component automatically.
+// Only for development environment
 if(process.env.NODE_ENV !== 'production') {
     const webpack = require('webpack');
     const config = require('../webpack.config.dev');

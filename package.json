@@ -4,12 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=production mocha --compilers js:babel-register",
+    "test": "mocha --compilers js:babel-register",
     "start": "nodemon dist/server.js --ignore src",
     "build": "webpack --config webpack.config.dev.js",
     "clean": "rimraf dist",
-    "prepublish": "npm run build",
-    "babel-register": "babel --plugins transform-react-display-name src/home.js"
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -22,9 +21,12 @@
   },
   "homepage": "https://github.com/teekenl/react-photo-gallery#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "body-parser": "^1.18.1",
     "express": "^4.13.4",
+    "express-session": "^1.15.5",
     "mocha": "^2.4.5",
+    "mongodb": "^2.2.31",
     "nodemon": "^1.12.1",
     "path": "^0.12.7",
     "raven-js": "^2.3.0",

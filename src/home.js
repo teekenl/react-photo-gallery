@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import Single from './Single';
 import PhotoGrid from './PhotoGrid';
 import App from './App';
+import Signin from './Signin';
+import Signup from './Signup';
 
 import { Provider } from 'react-redux';
 import store, { history } from './store';
@@ -15,10 +17,12 @@ class Root extends Component {
         return(
             <Provider store={store}>
                 <Router history={history}>
-                    <Route path='/' component={App}>
+                    <Route path='/home' component={App}>
                         <IndexRoute component={PhotoGrid} />
-                        <Route path="/view/:postId" component={Single}/>
+                        <Route path="/home/view/:postId" component={Single}/>
                     </Route>
+                    <Route path='/signin' component={Signin}/>
+                    <Route path='/signup' component={Signup} />
                 </Router>
             </Provider>
         )

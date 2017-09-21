@@ -3,7 +3,6 @@ import Photo from './Photo';
 import Comment from './Comment';
 import css from './style.css';
 
-
 class Single extends Component {
     render(){
         const {postId} = this.props.params;

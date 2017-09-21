@@ -2,12 +2,9 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-    entry: {
-        home: "./src/home.js",
-        dashboard: "./src/dashboard.js"
-    },
+    entry: "./src/home.js",
     output: {
-        filename: "[name].bundle.js",
+        filename: "bundle.js",
         path: path.join(__dirname,'dist'),
         publicPath: "/dist/"
     },
@@ -23,12 +20,18 @@ module.exports = {
         loaders:[
             {
                 test: /\.js$/, loader: 'babel-loader',
-                include: path.resolve(__dirname, 'src'),
+                include: [
+                  path.resolve(__dirname, 'test'),
+                  path.resolve(__dirname, 'src')
+                ],
                 exclude: /node_modules/
             },
             {
                 test: /\.jsx$/, loader: 'babel-loader',
-                include: path.resolve(__dirname, 'src'),
+                include: [
+                  path.resolve(__dirname, 'test'),
+                  path.resolve(__dirname, 'src')
+                ],
                 exclude: /node_modules/
             },
             {
